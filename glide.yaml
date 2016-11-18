@@ -1,0 +1,3 @@
+package: github.com/pipes-and-filters/http-pipe
+import:
+- package: github.com/pipes-and-filters/filters
