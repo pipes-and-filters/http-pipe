@@ -1,4 +1,11 @@
 language: go
 go: 1.6
+services:
+- docker
 script:
 - make test
+install:
+- make deps
+after_success:
+- make dockertravisbuild
+

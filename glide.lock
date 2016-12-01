@@ -1,0 +1,8 @@
+hash: 1fb61ab3758bcf3d8d0c235bd0d5987d67eea433dac645490a76cd269cb8441d
+updated: 2016-12-01T17:54:44.707067802+01:00
+imports:
+- name: github.com/pipes-and-filters/filters
+  version: d2a89a293c25f1abe16a0b34ad7981562d4a4afe
+- name: gopkg.in/yaml.v2
+  version: a5b47d31c556af34a302ce5d659e6fea44d90de0
+testImports: []
