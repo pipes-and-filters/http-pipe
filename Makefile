@@ -13,10 +13,9 @@ test: deps
 	@glide novendor|xargs go test -v
 
 build-docker: build
-	docker build -t pipesandfilters/http-pipe -f Dockerfile .
+	docker build -t $(NAME):$(TRAVIS_COMMIT) .
 
 dockertravisbuild: build-docker
-	docker build -t $(NAME):$(TRAVIS_COMMIT) .
 	@docker login -u $(DOCKER_USER) -p $(DOCKER_PASS)
 	docker push $(NAME):$(TRAVIS_COMMIT)
 
