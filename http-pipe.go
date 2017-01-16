@@ -40,6 +40,9 @@ func main() {
 		log.Fatal(err)
 	}
 	err = http.ListenAndServe(fmt.Sprintf(":%v", port), http.HandlerFunc(FilterHandler))
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func FilterHandler(w http.ResponseWriter, r *http.Request) {
@@ -52,13 +55,14 @@ func FilterHandler(w http.ResponseWriter, r *http.Request) {
 	e.SetOutput(w)
 	err = e.Run()
 	if err != nil {
-		http.Error(w, "Server error", http.StatusInternalServerError)
+		//http.Error(w, "Server error", http.StatusInternalServerError)
+		logErrors(e.Errors())
 		log.Print(err)
 	}
 }
 
 func logErrors(es []error) {
 	for _, e := range es {
-		log.Print(e)
+		fmt.Println(e)
 	}
 }
